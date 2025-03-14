@@ -1,0 +1,39 @@
+1-) C#’ta Kullanılan Temel Veri Tipleri
+C# dilinde yaygın olarak kullanılan temel veri tipleri şunlardır:
+
+Veri Tipi	Açıklama	Örnek
+int:	Tam sayı değerleri tutar.	int x = 10;
+double:	Ondalıklı sayılar için kullanılır (daha hassas).	double y = 5.75;
+float:	Ondalıklı sayılar için kullanılır (double'dan daha az hassas).	float z = 3.14f;
+decimal: Finansal işlemler için kullanılan yüksek hassasiyetli veri tipi.	decimal para = 100.99m;
+char:	Tek bir karakter saklar.	char harf = 'A';
+string:	Metin (text) saklamak için kullanılır.	string isim = "Ali";
+bool:	true veya false değeri alır.	bool kontrol = true;
+
+2-) Bellek Kullanımı Karşılaştırması
+Veri tipi seçerken bellek kullanımını göz önünde bulundurmalıyız.
+
+int x = 5; → 4 byte (32 bit) bellek kullanır.
+double y = 5.2; → 8 byte (64 bit) bellek kullanır.
+string name = "Mehmet"; → Stringler dinamik bellek kullanır. "Mehmet" kelimesi için 6 karakter x 2 byte = 12 byte (Unicode karakterler için) bellek harcar.
+Bellek Kullanımı Karşılaştırması:
+string > double > int şeklinde sıralanabilir. Metinler (string) en fazla bellek tüketirken, tam sayılar (int) en az bellek tüketir.
+
+3-) Kullanıcıdan İki Sayı Alıp Toplamını Ekrana Yazdıran C# Programı
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        Console.Write("Enter the first number: ");
+        double num1 = double.Parse(Console.ReadLine());
+
+        Console.Write("Enter the second number: ");
+        double num2 = double.Parse(Console.ReadLine());
+
+        double sum = num1 + num2;
+
+        Console.WriteLine($"The sum of {num1} and {num2} is: {sum}");
+    }
+}
